@@ -5,9 +5,9 @@
 VXLAN is a tunnelling technology where in the frame is encapsulated with a VXLAN header and transmitted over L3 network.
 
 A switch supporting VXLAN can do following possible actions:
-1. Switch the packet to the destination for a locally learnt MAC address.
+1. Switch the frame to the destination for a locally learnt MAC address.
 2. Route the packet as L3 packet.
-3. Encapsulate packet in VXLAN and forward to local VTEP.
+3. Encapsulate frame in VXLAN and forward to local VTEP.
 
 ## How does VXLAN work ?
 
