@@ -30,3 +30,11 @@ Ethernet Frame (to be encapsulated)
 ```
 
 VXLAN adds 50-54 bytes of overhead with the encapsulation header so the link MTU needs to be configured accordingly.
+
+## How does VXLAN remote VTEP is learned?
+
+1. Static method - ingress replication 
+
+2. Multicast learning method - dynamic learning
+
+3. BGP based EVPN learning method 
