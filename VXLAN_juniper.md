@@ -56,6 +56,7 @@ set protocols pim interface all;
 set vlans VLAN100 vxlan multicast-group 233.252.0.2
 ```
 The RP can be spine or gateway device in the network. Tunnel services may be required for this method to work.
+
 3. BGP EVPN:
 ```
 set switch-options route-distinguisher 1.1.3.1:100
