@@ -39,3 +39,13 @@ history list
 
 
 yum history undo <id - Eg: 12>
+
+Download files using wget:
+
+[root@command ~]# wget http://vault.centos.org/7.6.1810/updates/Source/SPackages/kernel-3.10.0-957.27.2.el7.src.rpm
+--2019-09-26 17:22:28--  http://vault.centos.org/7.6.1810/updates/Source/SPackages/kernel-3.10.0-957.27.2.el7.src.rpm
+Resolving vault.centos.org (vault.centos.org)... 162.251.108.7
+Connecting to vault.centos.org (vault.centos.org)|162.251.108.7|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 101136511 (96M) [application/x-rpm]
+Saving to: â€˜kernel-3.10.0-957.27.2.el7.src.rpmâ€™
