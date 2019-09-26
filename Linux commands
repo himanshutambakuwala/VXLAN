@@ -3,7 +3,7 @@ finger user
 
 yum history
 
-'''
+```
 [root@command ~]# yum history
 Loaded plugins: fastestmirror, langpacks
 Existing lock /var/run/yum.pid: another copy is running as pid 17070.
@@ -35,4 +35,4 @@ ID     | Login user               | Date and time    | Action(s)      | Altered
      1 | System <unset>           | 2019-09-25 14:30 | Install        | 1322   
 history list
 [root@command ~]# 
-'''
+```
