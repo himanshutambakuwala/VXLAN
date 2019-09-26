@@ -36,3 +36,6 @@ ID     | Login user               | Date and time    | Action(s)      | Altered
 history list
 [root@command ~]# 
 ```
+
+
+yum history undo <id - Eg: 12>
