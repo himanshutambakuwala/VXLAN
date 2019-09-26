@@ -49,3 +49,9 @@ Connecting to vault.centos.org (vault.centos.org)|162.251.108.7|:80... connected
 HTTP request sent, awaiting response... 200 OK
 Length: 101136511 (96M) [application/x-rpm]
 Saving to: â€˜kernel-3.10.0-957.27.2.el7.src.rpmâ€™
+
+
+Download files using Curl:
+
+Curl -O http://vault.centos.org/7.6.1810/updates/Source/SPackages/kernel-3.10.0-957.27.2.el7.src.rpm
+
