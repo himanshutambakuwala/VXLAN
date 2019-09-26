@@ -1,0 +1,10 @@
+[root@command ~]# docker ps --filter name=nova
+CONTAINER ID        IMAGE                                         COMMAND                  CREATED             STATUS              PORTS               NAMES
+12d41a8c548e        kolla/centos-binary-nova-novncproxy:queens    "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_novncproxy
+8d1aa895872b        kolla/centos-binary-nova-consoleauth:queens   "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_consoleauth
+fd66419774d2        kolla/centos-binary-nova-conductor:queens     "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_conductor
+1e7ce526e91c        kolla/centos-binary-nova-scheduler:queens     "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_scheduler
+1e18c7820730        kolla/centos-binary-nova-api:queens           "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_api
+9b9eaecca214        kolla/centos-binary-nova-ssh:queens           "dumb-init --single-â€¦"   17 hours ago        Up 17 hours                             nova_ssh
+[root@command ~]# 
+
