@@ -1,0 +1,38 @@
+finger user
+
+
+yum history
+
+'''
+[root@command ~]# yum history
+Loaded plugins: fastestmirror, langpacks
+Existing lock /var/run/yum.pid: another copy is running as pid 17070.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  31 M RSS (1.5 GB VSZ)
+    Started: Thu Sep 26 16:32:50 2019 - 00:03 ago
+    State  : Sleeping, pid: 17070
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  27 M RSS (1.4 GB VSZ)
+    Started: Thu Sep 26 16:32:50 2019 - 00:05 ago
+    State  : Sleeping, pid: 17070
+ID     | Login user               | Date and time    | Action(s)      | Altered
+-------------------------------------------------------------------------------
+    14 | contrail <contrail>      | 2019-09-26 12:36 | Install        |    1   
+    13 | root <root>              | 2019-09-26 11:27 | Erase          |    4   
+    12 | root <root>              | 2019-09-26 11:12 | I, U           |   38 ##
+    11 | contrail <contrail>      | 2019-09-25 22:26 | I, U           |    3   
+    10 | contrail <contrail>      | 2019-09-25 22:22 | Install        |    2   
+     9 | contrail <contrail>      | 2019-09-25 19:26 | Erase          |    2   
+     8 | root <root>              | 2019-09-25 16:12 | Install        |    2   
+     7 | root <root>              | 2019-09-25 16:12 | Install        |    1   
+     6 | root <root>              | 2019-09-25 16:11 | Install        |    1   
+     5 | root <root>              | 2019-09-25 16:11 | Install        |    1   
+     4 | root <root>              | 2019-09-25 16:07 | I, U           |    3   
+     3 | root <root>              | 2019-09-25 14:57 | Install        |    2   
+     2 | root <root>              | 2019-09-25 14:50 | Update         |    8   
+     1 | System <unset>           | 2019-09-25 14:30 | Install        | 1322   
+history list
+[root@command ~]# 
+'''
