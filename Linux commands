@@ -50,6 +50,15 @@ HTTP request sent, awaiting response... 200 OK
 Length: 101136511 (96M) [application/x-rpm]
 Saving to: â€˜kernel-3.10.0-957.27.2.el7.src.rpmâ€™
 
+Resume Broken Download:
+
+wget -c http://ftp.ussg.iu.edu/linux/ubuntu-releases/5.10/ubuntu-5.10-install-i386.iso
+
+Run the download in background:
+
+wget http://ftp.ussg.iu.edu/linux/ubuntu-releases/5.10/ubuntu-5.10-install-i386.iso &
+
+
 
 Download files using Curl:
 
