@@ -36,17 +36,7 @@ ID     | Login user               | Date and time    | Action(s)      | Altered
 history list
 [root@command ~]# 
 ```
-dffd
-```
-leaf1# show vlans
-VLAN100 {
-    vlan-id 100;
-    vxlan {
-        vni 100;
-        encapsulate-inner-vlan;
-    }
-}
-```
+
 
 yum history undo <id - Eg: 12>
 
