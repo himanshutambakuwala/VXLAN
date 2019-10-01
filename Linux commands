@@ -84,4 +84,83 @@ virsh command to spawn a VM:
 
 virt-install --name ccommand --memory 65536 --vcpus 16 --network bridge=br-management --network bridge=br-fabric --disk path=/var/lib/libvirt/images/ccommand.qcow2,size=250 --location /var/lib/libvirt/images/CentOS-7-x86_64-DVD-1804.iso --os-variant rhel7 --graphics none --console pty,target_type=serial --initrd-inject /root/ks_cc.cfg --extra-args="ks=file:/ks_cc.cfg console=tty0 console=ttyS0,115200n8 serial"
 
+[root@localhost ~]# more ks_cc.cfg
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use CDROM installation media
+cdrom
+# Use text mode install
+text
+# Run the Setup Agent on first boot
+firstboot --enable
+ignoredisk --only-use=vda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts=''
+# System language
+lang en_IN.UTF-8
+
+# Network information
+network  --bootproto=static --device=eth0 --gateway=10.219.97.1 --ip=10.219.97.122 --nameserver=10.219.2.101,8.8.8.8 --netmask=255.255.255.128 --noipv6 --activate
+network  --bootproto=dhcp --device=eth1 --onboot=off --ipv6=auto
+network  --hostname=centos-automation-test
+
+# Root password
+rootpw --iscrypted $6$zSov9FTyYeeCPDVd$v1lrQDhVkzcpgtCRaNskClqABCF0wlBPlh0H1UsYBQtzWZGISt5MpZGQrfA6sBlf58os9PTipZBPfCR68kFTI0
+# System services
+services --enabled="chronyd"
+# Do not configure the X Window System
+skipx
+# System timezone
+timezone Asia/Kolkata --isUtc --ntpservers=anyntp.juniper.net
+user --groups=wheel --name=contrail --password=$6$ZYm6xItMQ2TD98Dx$0j88SZMLQveNbuwJE1Bg4fIr/IN3btm4wAMWkl/ol8jKaLEJ.bcy.j.ZeoP7uKxynJwzhn45mtZVmPraRcXwO/ --iscrypted
+# X Window System configuration information
+xconfig  --startxonboot
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=vda
+autopart --type=lvm
+# Partition clearing information
+clearpart --all --initlabel --drives=vda
+
+%packages
+@base
+@core
+@desktop-debugging
+@dial-up
+@fonts
+@gnome-desktop
+@guest-agents
+@guest-desktop-agents
+@hardware-monitoring
+@input-methods
+@internet-browser
+@multimedia
+@print-client
+@x11
+chrony
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end
+
+%anaconda
+pwpolicy root --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+pwpolicy user --minlen=6 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+%end
+[root@localhost ~]# 
 ```
+
+Stop/Start the VM:
+virsh list
+virsh stop centos-contrail-command
+virsh destroy centos-contrail-command
+virsh start centos-contrail-command
+
+Destroying the VM:
+virsh list
+virsh destroy centos-contrail-command
+virsh undefine centos-contrail-command
