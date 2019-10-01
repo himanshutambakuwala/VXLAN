@@ -164,3 +164,7 @@ Destroying the VM:
 virsh list
 virsh destroy centos-contrail-command
 virsh undefine centos-contrail-command
+
+Setting the password less authentication:
+ssh-keygen
+ssh-copy-id username@IP
