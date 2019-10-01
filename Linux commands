@@ -3,7 +3,7 @@ finger user
 
 yum history
 
-```bash
+```
 [root@command ~]# yum history
 Loaded plugins: fastestmirror, langpacks
 Existing lock /var/run/yum.pid: another copy is running as pid 17070.
